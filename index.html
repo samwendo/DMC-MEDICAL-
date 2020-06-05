@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Site made with Mobirise Website Builder v4.10.6, -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.10.6, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/DA.png" type="image/x-icon">
+    <meta name="description" content="">
+
+    <title>Welcome to Dandelion Africa</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+
+
+
+
+</head>
+<style>
+    .counter {
+        background-color: #f5f5f5;
+        padding: 20px 0;
+        border-radius: 5px;
+    }
+
+    .count-title {
+        font-size: 40px;
+        font-weight: normal;
+        margin-top: 10px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .count-text {
+        font-size: 13px;
+        font-weight: normal;
+        margin-top: 10px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .fa-2x {
+        margin: 0 auto;
+        float: none;
+        display: table;
+        color: #4ad1e5;
+    }
+</style>
+<script>
+    (function ($) {
+        $.fn.countTo = function (options) {
+            options = options || {};
+
+            return $(this).each(function () {
+                // set options for current element
+                var settings = $.extend({}, $.fn.countTo.defaults, {
+                    from: $(this).data('from'),
+                    to: $(this).data('to'),
+                    speed: $(this).data('speed'),
+                    refreshInterval: $(this).data('refresh-interval'),
+                    decimals: $(this).data('decimals')
+                }, options);
+
+                // how many times to update the value, and how much to increment the value on each update
+                var loops = Math.ceil(settings.speed / settings.refreshInterval),
+                    increment = (settings.to - settings.from) / loops;
+
+                // references & variables that will change with each update
+                var self = this,
+                    $self = $(this),
+                    loopCount = 0,
+                    value = settings.from,
+                    data = $self.data('countTo') || {};
+
+                $self.data('countTo', data);
+
+                // if an existing interval can be found, clear it first
+                if (data.interval) {
+                    clearInterval(data.interval);
+                }
+                data.interval = setInterval(updateTimer, settings.refreshInterval);
+
+                // initialize the element with the starting value
+                render(value);
+
+                function updateTimer() {
+                    value += increment;
+                    loopCount++;
+
+                    render(value);
+
+                    if (typeof (settings.onUpdate) == 'function') {
+                        settings.onUpdate.call(self, value);
+                    }
+
+                    if (loopCount >= loops) {
+                        // remove the interval
+                        $self.removeData('countTo');
+                        clearInterval(data.interval);
+                        value = settings.to;
+
+                        if (typeof (settings.onComplete) == 'function') {
+                            settings.onComplete.call(self, value);
+                        }
+                    }
+                }
+
+                function render(value) {
+                    var formattedValue = settings.formatter.call(self, value, settings);
+                    $self.html(formattedValue);
+                }
+            });
+        };
+
+        $.fn.countTo.defaults = {
+            from: 0, // the number the element should start at
+            to: 0, // the number the element should end at
+            speed: 1000, // how long it should take to count between the target numbers
+            refreshInterval: 100, // how often the element should be updated
+            decimals: 0, // the number of decimal places to show
+            formatter: formatter, // handler for formatting the value before rendering
+            onUpdate: null, // callback method for every time the element is updated
+            onComplete: null // callback method for when the element finishes updating
+        };
+
+        function formatter(value, settings) {
+            return value.toFixed(settings.decimals);
+        }
+    }(jQuery));
+
+    jQuery(function ($) {
+        // custom formatting example
+        $('.count-number').data('countToOptions', {
+            formatter: function (value, options) {
+                return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+            }
+        });
+
+        // start all the timers
+        $('.timer').each(count);
+
+        function count(options) {
+            var $this = $(this);
+            options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+            $this.countTo(options);
+        }
+    });
+</script>
+
+<body>
+    <section class="menu cid-s0E7mpi3LL" once="menu" id="menu1-j">
+
+
+
+        <nav
+            class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="menu-logo">
+                <div class="navbar-brand">
+                    <span class="navbar-logo">
+                        <a href="index.html">
+                            <img src="assets/images/DA.png" alt="Mobirise" title="" style="height: 3.8rem;">
+                        </a>
+                    </span>
+                    <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="#">
+                            Dandelion Africa
+                        </a></span>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="index.html"><span
+                                class="mobi-mbri mobi-mbri-home mbr-iconfont mbr-iconfont-btn"></span>
+
+                            Home</a>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link link text-white dropdown-toggle display-4" href="#"
+                            data-toggle="dropdown-submenu" aria-expanded="true"><span
+                                class="mobi-mbri mobi-mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+
+                            About Us</a>
+                        <div class="dropdown-menu"><a class="text-white dropdown-item display-4"
+                                href="dandelion-medical-center.html">Dandelion Medical Centre</a><a
+                                class="text-white dropdown-item display-4" href="resource-center.html"
+                                aria-expanded="false">Resource Centre</a></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="gallery.html"><span
+                                class="mobi-mbri mobi-mbri-image-gallery mbr-iconfont mbr-iconfont-btn"></span>
+
+                            Gallery</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link link text-white display-4" href="contact.html"><span
+                                class="mobi-mbri mobi-mbri-contact-form mbr-iconfont mbr-iconfont-btn"></span>Reach
+                            Us</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </section>
+
+    <section class="engine"><a href="https://mobirise.info/g">build your own site for free</a></section>
+    <section class="header6 cid-s0ARTEUOqV mbr-fullscreen mbr-parallax-background" id="header6-0">
+
+
+
+        <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(35, 35, 35);">
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="mbr-white col-md-10">
+                    <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">
+                        WELCOME TO DANDELION AFRICA</h1>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+            <a href="#next">
+                <i class="mbri-down mbr-iconfont"></i>
+            </a>
+        </div>
+    </section>
+
+
+
+    <section class="tabs3 cid-s0E0fkAjrE" id="tabs3-5">
+
+
+
+
+
+        <div class="container">
+            <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">Dandelion Africa</h2>
+            <h3 class="mbr-section-subtitle  display-5 align-center mbr-light mbr-fonts-style">Dandelion Africa is an
+                establishment that provides medical services. It also provides a youth-friendly environment that ensures
+                sound growth of the youth in the society.</h3>
+        </div>
+        <div class="container-fluid">
+            <div class="row tabcont">
+                <ul class="nav nav-tabs pt-3 mt-5" role="tablist">
+                    <li class="nav-item mbr-fonts-style"><a class="nav-link show active display-7" role="tab"
+                            data-toggle="tab" href="dandelion-medical-center.html" aria-selected="true">
+                            Dandelion Medical Centre</a></li>
+                    <li class="nav-item mbr-fonts-style"><a class="nav-link  show active display-7" role="tab"
+                            data-toggle="tab" href="resource-center.html" aria-selected="true">
+                            Resource Centre</a></li>
+
+
+
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row px-1">
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane in active mbr-table" role="tabpanel">
+                        <div class="row tab-content-row">
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbr-iconfont mbri-timer"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">MATERNITY
+                                    SERVICES</h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">Our team of
+                                    maternity care is committed to offering comprehensive medical support for you from
+                                    conception through to delivery and it is 24/7 operational.
+                                    <br></p>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbr-iconfont mbri-success"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
+                                    ULTRASOUND
+                                </h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">
+                                    Once every month we offer ultrasound services to people from the community.
+                                </p>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbr-iconfont mbri-bookmark"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">OUTPATIENT
+                                    &amp; LABORATORY SERVICES</h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">
+                                    Our laboratory is open Monday-Saturday from 8:00 am to 5:00 pm. </p>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                    <!-- oooooo -->
+
+                    <hr>
+
+
+                    <link rel="stylesheet"
+                        href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+
+                    <div class="container">
+                        <div class="row">
+                            <br />
+                            <div class="col text-center">
+                                <h2 style="text-align: center;">Statistics on DMC out patent and Back pack nurse</h2>
+                            </div>
+
+
+
+                        </div>
+                        <div class="row text-center">
+                            <div class="col">
+                                <div class="counter">
+                                    <!-- <i class="fa fa-code fa-2x"></i> -->
+                                    <h2 class="timer count-title count-number" data-to="15120" data-speed="15000"></h2>
+                                    <p class="count-text ">Family planing given</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="counter">
+                                    <!-- <i class="fa fa-coffee fa-2x"></i> -->
+                                    <h2 class="timer count-title count-number" data-to="5000" data-speed="19000"></h2>
+                                    <p class="count-text ">Immunization given</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="counter">
+                                    <!-- <i class="fa fa-lightbulb-o fa-2x"></i> -->
+                                    <h2 class="timer count-title count-number" data-to="100000" data-speed="25000"></h2>
+                                    <p class="count-text ">Patients seen</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="counter">
+                                    <!-- <i class="fa fa-bug fa-2x"></i> -->
+                                    <h2 class="timer count-title count-number" data-to="120120" data-speed="30000"></h2>
+                                    <p class="count-text ">Total number of patients seen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <!-- ooooooo -->
+
+
+
+
+                    <div id="tab2" class="tab-pane  mbr-table" role="tabpanel">
+                        <div class="row tab-content-row">
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbr-iconfont mbri-file"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
+                                    LIBRARY</h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">We also provide
+                                    computers for research and access to e-book material from the internet.&nbsp;<br>It
+                                    operates on Monday to Saturday.<br></p>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbr-iconfont mbri-smile-face"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">YOUTH
+                                    FRIENDLY CENTRE</h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">
+                                    Provides a haven for youth to come, share and seek guidance and counselling services
+                                    on issues affecting them.
+                                </p>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbr-iconfont mbri-home"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">TRAINING HALL
+                                </h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">
+                                    A safe space for women to hold training on sexual and reproductive health, business
+                                    and computer.</p>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div id="tab3" class="tab-pane  mbr-table" role="tabpanel">
+                        <div class="row tab-content-row">
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbri-extension mbr-iconfont"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
+                                    TRENDY WEBSITE BLOCKS
+                                </h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">
+                                    Choose from the large selection pre-made blocks - full-screen intro, bootstrap
+                                    carousel, slider, responsive image gallery with, parallax scrolling, sticky header
+                                    and more.
+                                </p>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbri-extension mbr-iconfont"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
+                                    TRENDY WEBSITE BLOCKS
+                                </h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">
+                                    Choose from the large selection pre-made blocks - full-screen intro, bootstrap
+                                    carousel, slider, responsive image gallery with, parallax scrolling, sticky header
+                                    and more.
+                                </p>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbri-extension mbr-iconfont"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
+                                    TRENDY WEBSITE BLOCKS
+                                </h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">
+                                    Choose from the large selection pre-made blocks - full-screen intro, bootstrap
+                                    carousel, slider, responsive image gallery with, parallax scrolling, sticky header
+                                    and more.
+                                </p>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div id="tab4" class="tab-pane  mbr-table" role="tabpanel">
+                        <div class="row tab-content-row">
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbri-responsive mbr-iconfont"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
+                                    MOBILE FRIENDLY
+                                </h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">
+                                    No special actions required, all sites you make with Mobirise are mobile-friendly.
+                                    You don't have to create a special mobile version of your site, it will adapt
+                                    automagically.
+                                </p>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbri-responsive mbr-iconfont"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
+                                    MOBILE FRIENDLY
+                                </h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">
+                                    No special actions required, all sites you make with Mobirise are mobile-friendly.
+                                    You don't have to create a special mobile version of your site, it will adapt
+                                    automagically.
+                                </p>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbri-responsive mbr-iconfont"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
+                                    MOBILE FRIENDLY
+                                </h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">
+                                    No special actions required, all sites you make with Mobirise are mobile-friendly.
+                                    You don't have to create a special mobile version of your site, it will adapt
+                                    automagically.
+                                </p>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div id="tab5" class="tab-pane  mbr-table" role="tabpanel">
+                        <div class="row tab-content-row">
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbri-bootstrap mbr-iconfont"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
+                                    IT'S EASY AND SIMPLE
+                                </h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">
+                                    Cut down the development time with drag-and-drop website builder. Drop the blocks
+                                    into the page, edit content inline and publish - no technical skills required.
+                                </p>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbri-bootstrap mbr-iconfont"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
+                                    IT'S EASY AND SIMPLE
+                                </h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">
+                                    Cut down the development time with drag-and-drop website builder. Drop the blocks
+                                    into the page, edit content inline and publish - no technical skills required.
+                                </p>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbri-bootstrap mbr-iconfont"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
+                                    IT'S EASY AND SIMPLE
+                                </h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">
+                                    Cut down the development time with drag-and-drop website builder. Drop the blocks
+                                    into the page, edit content inline and publish - no technical skills required.
+                                </p>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div id="tab6" class="tab-pane  mbr-table" role="tabpanel">
+                        <div class="row tab-content-row">
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbri-extension mbr-iconfont"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
+                                    TRENDY WEBSITE BLOCKS
+                                </h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">
+                                    Choose from the large selection pre-made blocks - full-screen intro, bootstrap
+                                    carousel, slider, responsive image gallery with, parallax scrolling, sticky header
+                                    and more.
+                                </p>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbri-extension mbr-iconfont"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
+                                    TRENDY WEBSITE BLOCKS
+                                </h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">
+                                    Choose from the large selection pre-made blocks - full-screen intro, bootstrap
+                                    carousel, slider, responsive image gallery with, parallax scrolling, sticky header
+                                    and more.
+                                </p>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 col-lg-4">
+                                <div class="card-img ">
+                                    <span class="mbri-extension mbr-iconfont"></span>
+                                </div>
+                                <h4 class="mbr-element-title  align-center mbr-fonts-style pb-2 display-5">
+                                    TRENDY WEBSITE BLOCKS
+                                </h4>
+                                <p class="mbr-section-text  align-center mbr-fonts-style display-7">
+                                    Choose from the large selection pre-made blocks - full-screen intro, bootstrap
+                                    carousel, slider, responsive image gallery with, parallax scrolling, sticky header
+                                    and more.
+                                </p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mbr-section info3 cid-s0E4kGwExw" id="info3-7">
+
+
+
+        <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(35, 35, 35);">
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="media-container-column title col-12 col-md-10">
+                    <h2 class="align-left mbr-bold mbr-white pb-3 mbr-fonts-style display-2">HEALTH CENTRE</h2>
+                    <h3 class="mbr-section-subtitle align-left mbr-light mbr-white pb-3 mbr-fonts-style display-5">The
+                        Dandelion medical Out-patient Centre was opened to reach out to the neighboring community and
+                        institutions for better medical healthcare.&nbsp;</h3>
+                    <p class="mbr-text align-left mbr-white mbr-fonts-style display-7">
+                        Some of the services offered include consultation, registration free immunization, free wound
+                        dressing, free antenatal, free family planning, free maternity free breast &amp; cervical cancer
+                        screening and free HIV/AIDS testing.<br><br>The health Centre anticipates that this Centre will
+                        serve to provide easy access to quality healthcare services for your customers and we would like
+                        to assure you that the services offered at this Centre are at par with and at the same high
+                        level of service offered at the other hospitals<br></p>
+                    <div class="mbr-section-btn align-left py-4"><a class="btn btn-primary display-4"
+                            href="dandelion-medical-center.html">OUR MEDICAL CENTRE</a>
+                        <a class="btn btn-white-outline display-4" href="contact.html">CONTACT US</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="carousel slide testimonials-slider cid-s0ESZqecrH" data-interval="false"
+        id="testimonials-slider1-2b">
+
+
+
+
+
+        <div class="container text-center">
+            <h2 class="pb-5 mbr-fonts-style display-2">
+                <p>
+                    STORIES OF CHANGE</p>
+            </h2>
+
+            <div class="carousel slide" role="listbox" data-pause="true" data-keyboard="false" data-ride="carousel"
+                data-interval="5000">
+                <div class="carousel-inner">
+
+
+                    <div class="carousel-item">
+                        <div class="user col-md-8">
+                            <div class="user_image">
+                                <img src="assets/images/testimonial-400x252.jpg" alt="" title="">
+                            </div>
+                            <div class="user_text pb-3">
+                                <p class="mbr-fonts-style display-7">
+                                    I gave birth to my baby boy at Dandelion Medical Centre on 18th of July 2019. The
+                                    nurses were friendly and cooperated in ensuring that I had a safe delivery. After
+                                    delivery, I took a hot shower and the staff served me with breakfast something that
+                                    does not happen in other facilities set up in rural areas. In addition, my baby was
+                                    gifted with a warm clothing package. As a woman born and raised here in the rural
+                                    area, I would like to commend that this maternity facility is more of an answered
+                                    prayer to us. Initially, expectant women used to walk long distance or use
+                                    motorbikes for those who could afford to access health services in either Mogotio or
+                                    Eldama Ravine; most of them would deliver on their way to the hospital. We feel
+                                    privileged to have such a maternity service at our door step. It will go a long way
+                                    in restoring the dignity of women in rural areas where poor infrastructure and
+                                    poverty is the order of the day.
+                                </p>
+                            </div>
+                            <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">Millicent Jeptoo</div>
+                            <div class="user_desk mbr-light mbr-fonts-style display-7">Maternity Beneficiary</div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="carousel-item">
+                        <div class="user col-md-8">
+                            <div class="user_image">
+                                <img src="assets/images/face2.jpg">
+                            </div>
+                            <div class="user_text pb-3">
+                                <p class="mbr-fonts-style display-7">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae nostrum, quos
+                                    voluptas fugiat blanditiis, temporibus expedita cumque doloribus ea, officiis
+                                    consequuntur repellat minus ad veritatis? Facere similique accusamus, accusantium
+                                    sunt!
+                                </p>
+                            </div>
+                            <div class="user_name mbr-bold pb-2 mbr-fonts-style display-7">
+                                Linda
+                            </div>
+                            <div class="user_desk mbr-light mbr-fonts-style display-7">
+                                DEVELOPER
+                            </div>
+                        </div>
+                    </div> -->
+
+
+                </div>
+
+                <div class="carousel-controls">
+                    <a class="carousel-control-prev" role="button" data-slide="prev">
+                        <span aria-hidden="true" class="mbri-arrow-prev mbr-iconfont"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+
+                    <a class="carousel-control-next" role="button" data-slide="next">
+                        <span aria-hidden="true" class="mbri-arrow-next mbr-iconfont"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <section class="cid-s0ETV2xf8w" id="footer2-2e">
+        <div class="container">
+               <div class="media-container-row content mbr-white">
+                   <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                       <p class="mbr-text">
+                           <!-- <strong>Address</strong>
+                           <br>
+                           <br>1234 Street Name
+                           <br>City, AA 99999
+                           <br>
+                           <br> -->
+   
+                           <strong>Contacts</strong>
+                           <br>
+                           <br> Email: info@dandelionafrica.org
+                           <br>Phone: +254 725 1151252
+                           
+                       </p>
+                   </div>
+                   <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                       <p class="mbr-text">
+                           <strong>
+                               
+                           <a href="https://dandelionafrica.org/">Dandelion Africa website </a>
+                       </strong>
+                       <br>
+                           <a href="https://bryomajor.github.io/my-resume"> Brian Major</a>
+                           <br>
+                           <a class="text-primary" href="https://samwendo.github.io/MY-PORTFOLIO/">Sam Wendo</a>
+                           <br>
+                           <a class="text-primary" href="https://www.zoerainphoto.com/">Zoe Rain</a>
+                           <br>
+                         
+                          
+                           
+                           </p>
+                   </div>
+                   <!-- <div class="col-12 col-md-6">
+                   <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCy9r70T3NYf3PhvVflTo0_zdif2_IoIYs&amp;q=place_id:ChIJ7wthz5CNKRgRGsJ8vDMY8vI" allowfullscreen=""></iframe></div>
+               </div> -->
+               </div>
+               
+               <div class="footer-lower">
+                   <div class="media-container-row">
+                       <div class="col-sm-12">
+                           <hr>
+                       </div>
+                   </div>
+                   <div class="media-container-row mbr-white">
+                       <div class="col-sm-6 copyright">
+                           <p class="mbr-text mbr-fonts-style display-7">
+                               © Copyright 2020 Dandelion Africa - All Rights Reserved
+                           </p>
+                       </div>
+                       <div class="col-md-6">
+                           <div class="social-list align-right">
+                               <div class="soc-item">
+                                   <a href="https://twitter.com/dandelionafrica/" target="_blank">
+                                       <span class="mbr-iconfont mbr-iconfont-social socicon-twitter socicon"></span>
+                                   </a>
+                               </div>
+                               <div class="social-list align-right">
+                                   <div class="soc-item">
+                                       <a href="https://www.instagram.com/dandelionafrica/" target="_blank">
+                                           <span class="mbr-iconfont mbr-iconfont-social socicon-instagram socicon"></span>
+                                       </a>
+                                   </div>
+                                   <div class="soc-item">
+                                       <a href="https://www.facebook.com/dandelionafrica/" target="_blank">
+                                           <span class="mbr-iconfont mbr-iconfont-social socicon-facebook socicon"></span>
+                                       </a>
+                                   </div>
+                                   <div class="soc-item">
+                                       <a href="https://www.youtube.com/channel/UCOb-V_fxIHaZDAlvrcRD_NA/" target="_blank">
+                                           <span class="mbr-iconfont mbr-iconfont-social socicon-youtube socicon"></span>
+                                       </a>
+                                   </div>
+   
+   
+   
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+       </section>
+   
+    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="assets/popper/popper.min.js"></script>
+    <script src="assets/tether/tether.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/dropdown/js/nav-dropdown.js"></script>
+    <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+    <script src="assets/parallax/jarallax.min.js"></script>
+    <script src="assets/mbr-tabs/mbr-tabs.js"></script>
+    <script src="assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
+    <script src="assets/mbr-testimonials-slider/mbr-testimonials-slider.js"></script>
+    <script src="assets/smoothscroll/smooth-scroll.js"></script>
+    <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+    <script src="assets/theme/js/script.js"></script>
+
+
+</body>
+
+</html>
